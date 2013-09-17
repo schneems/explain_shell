@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name          = "explain_shell"
-  gem.version       = "1.0.1"
+  gem.version       = "1.0.2"
   gem.authors       = ["Richard Schneeman"]
   gem.email         = ["richard.schneeman+rubygems@gmail.com"]
   gem.description   = %q{ Bash interface to http://explainshell.com/ }

@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
 explain_script = File.expand_path('../explain.sh', __FILE__)
-exec "#{explain_script} #{ARGV}"
+exec "#{explain_script} #{ARGV.join(' ')}"
