@@ -1,17 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env ruby
 
-# base url with first command already injected
-# $ explain tar
-#   => http://explainshel.com/explain/tar?args=
-URL="http://explainshell.com/explain/$1?args="
-
-# removes $1 (tar) from arguments ($@)
-shift;
-
-# iterates over remaining args and adds builds the rest of the url
-for i in "$@"; do
-  URL=$URL"$i""+"
-done
-
-# opens url in browser
-open $URL
+explain_script = File.expand_path('../explain.sh', __FILE__)
+exec "#{explain_script} #{ARGV}"
