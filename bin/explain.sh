@@ -14,4 +14,12 @@ for i in "$@"; do
 done
 
 # opens url in browser
-open $url
+# use `open` on OS X, `xdg-open` on GNU-Linux (Ubuntu et al.) 
+case $OSTYPE in
+  darwin*)
+    open $url ;;
+  linux-gnu)
+    xdg-open $url ;;
+  *)
+    echo "no can do"
+esac
