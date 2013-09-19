@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # base url with first command already injected
 # $ explain tar
@@ -14,4 +14,11 @@ for i in "$@"; do
 done
 
 # opens url in browser
-open $url
+case $OSTYPE in
+  darwin*)
+    open $url ;;
+  linux-gnu)
+    xdg-open $url ;;
+  *)
+    echo 'cannot open it'
+esac
